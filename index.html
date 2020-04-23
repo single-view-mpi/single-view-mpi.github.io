@@ -1,3 +1,193 @@
 <!doctype html>
 <meta charset=utf-8>
-Coming soon.
+<title>Single-view view synthesis with multiplane images</title>
+<style>
+body {
+  margin: 0 auto;
+  padding: 30px 20px 50px;
+  font-family: sans-serif;
+  background: #f4f4f4;
+  color: #222;
+  max-width: 800px;
+}
+p {
+  line-height: 150%;
+  max-width: 45em;
+}
+h1, h2 {
+  font-weight: 200;
+}
+h2 a {
+  color: #000;
+}
+
+h3 {
+  margin-top: 40px;
+}
+a {
+  text-decoration: none;
+  color: #22b;
+}
+a:hover {
+  text-decoration: underline;
+  color: #22b;
+}
+a:hover img {
+  opacity: .5;
+}
+.paper img { background: #888; }
+.video img {
+  border-radius: 6px;
+  background: #000;
+}
+h1 span {
+  font-size: 90%;
+  line-height: 1.5em;
+}
+h1 span::before { content: "("; }
+h1 span::after { content: ")"; }
+h1 span::before, h1 span::after {
+  vertical-align: .06em;
+}
+h2 span {
+  line-height: 2em;
+}
+em {
+  color: #333;
+  font-weight: bold;
+  font-style: normal;
+}
+.teaser {
+  max-width: 45em;
+  margin: 40px 0 60px 0;
+  white-space: nowrap;
+  position: relative;
+}
+.teaser .imgs .full {
+  width: 100%;
+}
+.teaser .imgs .center {
+  position: absolute;
+  width: 32%;
+  top: -3%;
+  left: 34%;
+}
+.teaser .labels span {
+  display: inline-block;
+  width: 33%;
+  text-align: center;
+  padding-top: 10px;
+}
+.bibtex {
+  white-space: pre;
+  font-family: monospace;
+  line-height: 150%;
+  background: #fff;
+  padding: 10px;
+  display: inline-block;
+  border-radius: 4px;
+}
+.crow > * {
+  vertical-align: middle;
+  margin-right: 20px;
+}
+a.img {
+  display: inline-block;
+}
+.links {
+  display: inline-block;
+  line-height: 150%;
+  padding: 8px 0;
+}
+.links a {
+  padding: 0 3px;
+}
+.examples {
+  padding: 10px 0;
+  max-width: 50em;
+}
+.examples img {
+  display: inline-block;
+  width: 192px;
+  height: 108px;
+}
+
+</style>
+<h1>Single-view view synthesis with multiplane&nbsp;images<br>
+<span>CVPR 2020</span></h1>
+<h2>
+  <a href="https://research.google/people/RichardTucker/">Richard Tucker</a><br>
+  <a href="https://research.google/people/105910/">Noah Snavely</a><br>
+  <span>Google Research</span>
+</h2>
+<hr>
+
+<div class=teaser>
+<div class=imgs><img class=full src="input_output.gif"><img class=center src="mpi.png"></div>
+<div class=labels><span>Single image input</span><span>Multiplane image</span><span>Novel rendered views</span></div>
+</div>
+
+<h3>Abstract</h3>
+<p>A recent strand of work in view synthesis uses deep learning to generate
+multiplane images—a camera-centric, layered 3D representation—given two
+or more input images at known viewpoints. We apply this representation to
+<em>single-view view synthesis</em>, a problem which is more challenging but has
+potentially much wider application. Our method learns to
+produce a multiplane image directly from a single image input,
+predicting shape and disoccluded content in a single step,
+and we introduce <em>scale-invariant
+view synthesis</em> for supervision, enabling us to train on online video. We show
+this approach is applicable to several different datasets, that it additionally
+generates reasonable depth maps, and that it learns to fill in content behind
+the edges of foreground objects in background layers.
+</p>
+
+<h3>Paper</h3>
+<div class=crow>
+<a class=img href="single_view_mpi.pdf"><img src="paper.png" width=300 style="border: 1px solid transparent"></a>
+<div class=links>
+Single-View View Synthesis with Multiplane Images<br>
+Richard Tucker and Noah Snavely<br>
+<em>CVPR 2020</em><br>
+[<a href="single_view_mpi.pdf">PDF</a>] [Arxiv]
+</div>
+</div>
+
+<h3>Video</h3>
+<div class=crow>
+<a class=img href="https://youtu.be/XOYE-OkjVSI"><img src="vid.png" style="border-radius: 6px; border: 1px solid #444;" width=450></a>
+<div class=links>
+[<a href="https://youtu.be/XOYE-OkjVSI">YouTube</a>]
+</div>
+</div>
+
+<h3>Interactive examples</h3>
+
+Click these images to display the predicted MPIs in an interactive viewer.
+
+<div class=examples>
+<a target="_blank" href="view.html?i=7"><img src="mpi/7/input.png"></a>
+<a target="_blank" href="view.html?i=1"><img src="mpi/1/input.png"></a>
+<a target="_blank" href="view.html?i=5"><img src="mpi/5/input.png"></a>
+<a target="_blank" href="view.html?i=0"><img src="mpi/0/input.png"></a>
+<a target="_blank" href="view.html?i=3"><img src="mpi/3/input.png"></a>
+<a target="_blank" href="view.html?i=2"><img src="mpi/2/input.png"></a>
+<a target="_blank" href="view.html?i=4"><img src="mpi/4/input.png"></a>
+<a target="_blank" href="view.html?i=6"><img src="mpi/6/input.png"></a>
+<a target="_blank" href="view.html?i=8"><img src="mpi/8/input.png"></a>
+<a target="_blank" href="view.html?i=9"><img src="mpi/9/input.png"></a>
+<a target="_blank" href="view.html?i=10"><img src="mpi/10/input.png"></a>
+<a target="_blank" href="view.html?i=11"><img src="mpi/11/input.png"></a>
+</div>
+(Images used under Creative Commons license from YouTube user SonaVisual.)
+
+<h3>BibTeX</h3>
+<div class=bibtex>@InProceedings{single_view_mpi,
+  author = {Tucker, Richard and Snavely, Noah},
+  title = {Single-view View Synthesis with Multiplane Images},
+  booktitle = {The IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
+  month = {June},
+  year = {2020}
+}
+</div>
+
